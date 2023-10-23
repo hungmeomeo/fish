@@ -1,6 +1,7 @@
 const express = require("express");
 require("dotenv").config();
 const app = express();
+const cors = require("cors"); // Import the cors package
 const uploadRouter = require("./routes/upload.routes");
 const authentication = require("./routes/auth.routes");
 const connectToMongoDB = require("./database/mongo");
@@ -11,6 +12,14 @@ connectToMongoDB();
 
 app.use(express.json());
 app.use(cookieParser());
+
+// Enable CORS for all routes by setting origin to "*"
+app.use(
+  cors({
+    origin: "*",
+    credentials: true, // Enable credentials (e.g., cookies, authorization headers)
+  })
+);
 
 app.use("/upload", uploadRouter);
 app.use("/auth", authentication);
