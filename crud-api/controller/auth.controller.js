@@ -29,6 +29,7 @@ const loginUser = async (req, res) => {
 
       res.cookie("authToken", token, {
         httpOnly: true,
+        sameSite: "None",
         secure: true,
         maxAge: 2 * 60 * 60 * 1000,
       });
@@ -99,6 +100,7 @@ const registerUser = async (req, res) => {
     // Set authToken cookie
     res.cookie("authToken", token, {
       httpOnly: true,
+      sameSite: "None",
       secure: true,
       maxAge: 2 * 60 * 60 * 1000,
     });
