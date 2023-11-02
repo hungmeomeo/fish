@@ -21,7 +21,7 @@ app.use(
   })
 );
 
-app.use("/upload", uploadRouter);
+app.use("/query", uploadRouter);
 app.use("/auth", authentication);
 
 app.listen(port, () => {
