@@ -12,12 +12,12 @@ const getObject = async (req, res) => {
     id: { $in: validIds },
   });
 
-  const results = images.map((image) => {
-    if (!image.quantity) {
-      image.quantity = 1;
-    }
-    return image;
-  });
+  // const results = images.map((image) => {
+  //   if (!image.quantity) {
+  //     image.quantity = 1;
+  //   }
+  //   return image;
+  // });
 
   res.json(images);
 };
