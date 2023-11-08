@@ -6,6 +6,8 @@ const imageSchema = new mongoose.Schema({
     price: Number,
     description: String,
     image: String,
+    cato: String,
+    sale: Boolean,
 });
 
 const Object = mongoose.model("Object", imageSchema);
