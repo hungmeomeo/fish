@@ -21,25 +21,25 @@ const getSaleProductsByCategory = async (req, res) => {
 };
 
 const getObject = async (req, res) => {
-  const ids = req.params.id.split(";");
+  if (req.params.id == "all") {
+    const images = await Object.find();
 
-  // Validate IDs (check format, sanitize, etc)
+    res.json(images);
+  }
+  else {
+    const ids = req.params.id.split(";");
 
-  const validIds = ids.map((id) => parseInt(id));
+    // Validate IDs (check format, sanitize, etc)
 
-  // Query database
-  const images = await Object.find({
-    id: { $in: validIds },
-  });
+    const validIds = ids.map((id) => parseInt(id));
 
-  // const results = images.map((image) => {
-  //   if (!image.quantity) {
-  //     image.quantity = 1;
-  //   }
-  //   return image;
-  // });
+    // Query database
+    const images = await Object.find({
+      id: { $in: validIds },
+    });
 
-  res.json(images);
+    res.json(images);
+  }
 };
 
 
