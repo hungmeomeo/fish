@@ -4,6 +4,7 @@ const app = express();
 const cors = require("cors"); // Import the cors package
 const uploadRouter = require("./routes/upload.routes");
 const authentication = require("./routes/auth.routes");
+const buyItem = require("./routes/purchase.routes");
 const connectToMongoDB = require("./database/mongo");
 const port = process.env.PORT || 3000;
 const cookieParser = require("cookie-parser");
@@ -23,6 +24,7 @@ app.use(
 
 app.use("/query", uploadRouter);
 app.use("/auth", authentication);
+app.use("/purchase", buyItem);
 
 app.listen(port, () => {
   console.log(`Server running on port: ${port}`);
