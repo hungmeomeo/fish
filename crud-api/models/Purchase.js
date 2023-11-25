@@ -4,6 +4,7 @@ const Cart = {
   ten_hang: { type: String, default: null },
   so_luong: { type: Number, default: 0 },
   price: { type: Number, default: 0 },
+  image: { type: String, default: null },
 };
 
 const purchaseSchema = new mongoose.Schema({
