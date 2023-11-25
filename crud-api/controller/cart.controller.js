@@ -26,6 +26,18 @@ const buyItem = async (req, res, next) => {
   }
 };
 
+const returnItem = async (req, res, next) => {
+  try {
+    const IdTarget = req.params.id;
+    const payments = await Purchase.find({ user_id: IdTarget });
+    res.json(payments);
+  } catch (error) {
+    // Pass the error to the next middleware (error-handling middleware)
+    next(error);
+  }
+};
+
 module.exports = {
   buyItem,
+  returnItem,
 };
