@@ -5,6 +5,7 @@ const Cart = {
   so_luong: { type: Number, default: 0 },
   price: { type: Number, default: 0 },
   image: { type: String, default: null },
+  prod_id: { type: String, default: null },
 };
 
 const purchaseSchema = new mongoose.Schema({
