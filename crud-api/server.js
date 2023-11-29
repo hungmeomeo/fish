@@ -17,7 +17,11 @@ app.use(cookieParser());
 // Enable CORS for all routes by setting origin to "*"
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: [
+      "https://fish-demo-ooyr.onrender.com",
+      "http://localhost:5173",
+      "http://localhost:5174",
+    ],
     credentials: true, // Enable credentials (e.g., cookies, authorization headers)
   })
 );
