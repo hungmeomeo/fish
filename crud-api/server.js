@@ -19,6 +19,7 @@ app.use(
   cors({
     origin: [
       "https://fish-demo-ooyr.onrender.com",
+      "https://ass-puce.vercel.app",
       "http://localhost:5173",
       "http://localhost:5174",
     ],
